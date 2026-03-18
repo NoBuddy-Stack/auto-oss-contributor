@@ -28,14 +28,14 @@ jobs:
 
       - name: Handle pending reviews
         env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           HF_API_KEY: ${{ secrets.HF_API_KEY }}
         run: node src/index.js --stage=reviews
 
       - name: Update dashboard
         env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: node src/index.js --stage=dashboard
 
       - name: Commit updates

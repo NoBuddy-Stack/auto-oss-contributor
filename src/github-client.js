@@ -5,9 +5,9 @@ let octokit = null;
 
 export function getOctokit() {
   if (!octokit) {
-    const token = process.env.GITHUB_PAT;
+    const token = process.env.GH_PAT;
     if (!token) {
-      throw new Error("GITHUB_PAT environment variable is required");
+      throw new Error("GH_PAT environment variable is required");
     }
     octokit = new Octokit({
       auth: token,

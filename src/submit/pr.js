@@ -31,7 +31,7 @@ export async function submitPR(analysis, changes, repoDir, fork, contributingGui
   execFileSync("git", ["commit", "-m", commitMessage], { cwd: repoDir, stdio: "pipe" });
 
   // Push to fork
-  const pushUrl = `https://x-access-token:${process.env.GITHUB_PAT}@github.com/${fork.owner}/${fork.repo}.git`;
+  const pushUrl = `https://x-access-token:${process.env.GH_PAT}@github.com/${fork.owner}/${fork.repo}.git`;
   execFileSync("git", ["remote", "set-url", "origin", pushUrl], { cwd: repoDir });
   execFileSync("git", ["push", "-u", "origin", branchName], { cwd: repoDir, stdio: "pipe" });
 
