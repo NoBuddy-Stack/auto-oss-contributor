@@ -70,5 +70,26 @@ npm start
 <!-- DASHBOARD:START -->
 ## Contribution Dashboard
 
-*No contributions yet. Run the pipeline to get started!*
+*Last updated: 2026-03-18*
+
+### Overview
+
+| Metric | Count |
+|--------|-------|
+| Total PRs | 0 |
+| Merged | 0 |
+| Open | 0 |
+| Closed | 0 |
+| **Merge Rate** | **0%** |
+
+### By Language
+
+| Language | PRs |
+|----------|-----|
+
+### By Contribution Type
+
+| Type | PRs |
+|------|-----|
+
 <!-- DASHBOARD:END -->
