@@ -1,0 +1,33 @@
+{
+  "discovery": {
+    "maxReposPerScan": 50,
+    "maxIssuesPerRepo": 5,
+    "languages": [],
+    "issueLabels": ["good first issue", "help wanted", "hacktoberfest"],
+    "maxIssueAgeDays": 30
+  },
+  "analysis": {
+    "qualityThreshold": 0.8,
+    "maxComplexity": "medium",
+    "contributionTypes": ["typo", "docs", "bug", "test", "feature", "dependency"]
+  },
+  "submission": {
+    "maxPRsPerDay": 5,
+    "maxPRsPerRepo": 1,
+    "cleanupForksAfterMerge": true
+  },
+  "llm": {
+    "openai": {
+      "model": "gpt-4o-mini",
+      "complexTaskTypes": ["bug", "feature", "test"]
+    },
+    "huggingface": {
+      "model": "codellama/CodeLlama-34b-Instruct-hf",
+      "simpleTaskTypes": ["typo", "docs", "dependency"]
+    }
+  },
+  "rateLimit": {
+    "githubRequestsPerHour": 4500,
+    "delayBetweenRequestsMs": 1000
+  }
+}
