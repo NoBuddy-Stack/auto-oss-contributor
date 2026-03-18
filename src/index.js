@@ -13,6 +13,7 @@ import { submitPR } from "./submit/pr.js";
 import { saveContribution, updateContributionStatuses } from "./submit/track.js";
 import { handlePendingReviews } from "./submit/review-handler.js";
 import { updateDashboard } from "./dashboard/readme-updater.js";
+import { sendDailySummary } from "./notify/summary.js";
 import { writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -41,6 +42,9 @@ async function main() {
     if (stage === "dashboard") {
       await updateContributionStatuses();
       updateDashboard();
+    }
+    if (stage === "notify") {
+      await sendDailySummary();
     }
   } catch (error) {
     console.error(`Pipeline failed: ${error.message}`);
@@ -160,6 +164,14 @@ async function runFullPipeline() {
     await handlePendingReviews();
   } catch (error) {
     console.warn(`Review handling failed: ${error.message}`);
+  }
+
+  // Stage 8: Send daily summary notification
+  console.log("\n--- Stage 8: Daily Summary Notification ---");
+  try {
+    await sendDailySummary();
+  } catch (error) {
+    console.warn(`Daily summary notification failed: ${error.message}`);
   }
 
   console.log(`\n=== Pipeline complete. ${prsSubmitted} PRs submitted. ===`);
