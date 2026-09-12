@@ -19,7 +19,7 @@ Automated open source contribution system powered by AI. Discovers contribution 
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/auto-oss-contributor.git
+git clone https://github.com/NoBuddy-Stack/auto-oss-contributor.git
 cd auto-oss-contributor
 npm install
 ```
